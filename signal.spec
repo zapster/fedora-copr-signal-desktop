@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	1.38.2
-Release:	1%{?dist}
+Release:	1%{?dist}-zapster1
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -11,7 +11,7 @@ Source1:    https://github.com/atom/node-spellchecker/archive/613ff91dd2d9a5ee0e
 Source2:    https://github.com/signalapp/zkgroup/archive/v0.7.1.tar.gz
 
 #ExclusiveArch:	x86_64
-BuildRequires: binutils, git, python2, gcc, gcc-c++, yarn, openssl-devel, bsdtar, jq, zlib, xz
+BuildRequires: binutils, git, python2, gcc, gcc-c++, npm, openssl-devel, bsdtar, jq, zlib, xz
 BuildRequires: nodejs, ca-certificates, xz
 %if 0%{?fedora} > 28
 BuildRequires: python-unversioned-command
@@ -167,6 +167,10 @@ ln -s %{__python3} ${HOME}/.bin/python
 export PATH="${HOME}/.bin:${PATH}"
 %endif
 
+# install yarn via npm
+
+npm install --global yarn
+
 yarn install
 
 %build
@@ -282,6 +286,9 @@ done
  
 
 %changelog
+* Wed Jan 13 2021 Josef Eisl <zapster@zapster.cc> 1.36.2-1-zapster1
+- Install yarn via npm
+
 * Fri Sep 25 2020 Guilherme Cardoso <gjc@ua.pt> 1.36.2-1
 - Patch to remove fsevents from build, since it make build failing
 in linux environments and is only needed for Apple MacOS users
