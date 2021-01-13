@@ -1,6 +1,6 @@
 Name:		signal-desktop
 Version:	1.38.2
-Release:	1%{?dist}-zapster1
+Release:	2%{?dist}-zapster1
 Summary:	Private messaging from your desktop
 License:	GPLv3
 URL:		https://github.com/signalapp/Signal-Desktop/
@@ -286,7 +286,7 @@ done
  
 
 %changelog
-* Wed Jan 13 2021 Josef Eisl <zapster@zapster.cc> 1.36.2-1-zapster1
+* Wed Jan 13 2021 Josef Eisl <zapster@zapster.cc> 1.36.2-2-zapster1
 - Install yarn via npm
 
 * Fri Sep 25 2020 Guilherme Cardoso <gjc@ua.pt> 1.36.2-1
